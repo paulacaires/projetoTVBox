@@ -1,0 +1,111 @@
+body {
+	background-color: var(--cinza-claro);
+	color: var(--cinza-escuro);
+}
+
+p {
+	font-size: var(--paragrafo-font-size);
+	font-family: var(--font-family-paragrafo);
+	text-align: justify;
+}
+
+/* Logo */
+
+.logo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: var(--titulo-font-size);
+	font-family: var(--font-family-titulo-secao);
+	text-align: center;
+}
+
+.logo h1 {
+	font-size: 1em;
+}
+
+.logo h2 {
+	font-size: 0.65em;
+	color: var(--laranja);
+	line-height: 12px;
+}
+
+/* Hero Section */
+
+.hero_section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow-x: hidden;
+}
+
+.hero_section p {
+	width: clamp(45ch, 40%, 75ch);
+	position: relative;
+}
+
+@media only screen and (max-width: 600px) {
+	.hero_section p {
+		width: 80%;
+		margin-top: 55px;
+	}
+}
+
+/* conteudo: desenho das tv boxes + texto */
+.hero_section .conteudo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;	
+}
+
+/* desenho das TV-Box */ 
+.tv_box {
+	aspect-ratio: 1 / 1;
+	width: clamp(150px, 24vw, 320px);
+	border-radius: 13%;
+	background-color: #222222;
+	position: relative;
+	/*top: -16vh;*/
+	/*centralizar o texto*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tv_box p {
+	/* para não subir junto com o texto principal */
+	top: 0px;
+	color: var(--cinza-claro);
+	font-family: var(--font-family-titulo-secao);
+	font-size: clamp(2.5rem, 3vw + 1rem, 4rem);
+	text-align: center;
+}
+
+.tv_box.primeira {
+	left: -4vw;
+	transform: rotate(30deg);
+}
+
+.tv_box.segunda {
+	left: 4vw;
+	transform: rotate(-30deg);
+}
+
+
+@media only screen and (max-width: 600px) {
+	/* o desenho não aparece no mobile */
+	.tv_box {
+		display: none;
+	}
+	
+	.hero_section .conteudo {
+		background-color: red;
+		justify-content: center;	
+	}
+} 
+
+
+
