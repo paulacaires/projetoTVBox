@@ -28,10 +28,12 @@ html {
 	--laranja: #E65100;
 	--cinza-claro: #FAFAFA;
 	--cinza-escuro: #111111;
-	--cinza-medio: #D9D9D9;
+	--cinza-medio: rgba(217, 217, 217, 0.2);
 	--branco: #FFFFFF;
 	
 	/*	TAMANHOS  */
 	--paragrafo-font-size: clamp(1.2rem, 1vw + 1rem, 1.8rem);
 	--titulo-font-size: clamp(2.5rem, 4vw + 1rem, 5.5rem);
+	--subtitulo-font-size: clamp(1.5rem, 3vw + 1rem, 3.5rem);
+	--h3-font-size: clamp(0.5rem, 2vw + 1rem, 2.5rem);
 }
