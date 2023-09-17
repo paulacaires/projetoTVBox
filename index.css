@@ -74,7 +74,7 @@ h3 {
 	align-items: center;	
 }
 
-/* desenho das TV-Box */ 
+/* =========		Desenho das TV Boxes		========= */
 .tv_box {
 	aspect-ratio: 1 / 1;
 	width: clamp(150px, 24vw, 320px);
@@ -128,7 +128,7 @@ h3 {
 }
 
 .solucoes h2 {
-	padding: 40px;
+	margin: 40px;
 }
 
 .solucoes .wrapper {
@@ -169,9 +169,10 @@ button:hover, button:focus {
 
 .solucoes .todos_cartoes {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
 	width: 75%;
+	gap: 40px;
 	flex-wrap: wrap;
 }
 
@@ -180,15 +181,20 @@ button:hover, button:focus {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 332px;
-	height: 411px;
+	width: 322px;
 	border-radius: 12px;
-	margin-bottom: 40px;		
+	gap: 20px;	
 }
 
 @media only screen and (max-width: 1300px) {
-	.solucoes .todos_cartoes {
-		justify-content: space-evenly;
+	/* o botão fica no meio do cartão */
+	.solucoes button {
+		margin-right: 10%;
+	}
+
+	.solucoes button {
+		width: auto;
+		height: auto;
 	}
 }
 
@@ -199,7 +205,7 @@ button:hover, button:focus {
 .solucoes .cartao .imagem {
 	background-color: #DEDEDE;
 	width: 100%;
-	height: 222px;
+	min-height: 212px;
 	border-radius: 12px 12px 0px 0px;
 }
 
@@ -210,10 +216,8 @@ button:hover, button:focus {
 }
 
 @media only screen and (max-width: 700px) {
-	/* -50px */
 	.solucoes .cartao {
 		width: 292px;
-		height: 371px;
 	}
 	
 	.solucoes .cartao .imagem {
@@ -222,10 +226,8 @@ button:hover, button:focus {
 } 
 
 @media only screen and (max-width: 550px) {
-	/* -50px */
 	.solucoes .cartao {
 		width: 242px;
-		height: 321px;
 	}
 	
 	.solucoes .wrapper {
@@ -235,14 +237,24 @@ button:hover, button:focus {
 } 
 
 @media only screen and (max-width: 400px) {
-	/* -40px */
-	.solucoes .cartao {
-		width: 202px;
-		height: 281px;
+	.solucoes .todos_cartoes {
+		width: 100%;
 	}
 	
+	.solucoes .cartao {
+		width: 100%;
+		border-radius: 0px;
+	}
+		
 	.solucoes .cartao .imagem {
 		height: 122px;
+		border-radius: 0px;
+	}
+	
+	.solucoes button {
+		width: 100%;
+		border-radius: 0px;
+		padding: 5px 10px;
+		margin: 0px;
 	}
 } 
-
