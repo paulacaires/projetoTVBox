@@ -3,7 +3,7 @@ body {
 	color: var(--cinza-escuro);
 }
 
-p {
+a, p {
 	font-size: var(--paragrafo-font-size);
 	font-family: var(--font-family-paragrafo);
 	text-align: justify;
@@ -21,13 +21,45 @@ h3 {
 	color: var(--cinza-escuro);
 }
 
+a:link, a:visited {
+	color: var(--cinza-escuro);
+}
+
+a:hover, a:active {
+	color: var(--laranja);
+	font-weight: bold;
+}
+
+/* =========		Header		========= */
+
+header {
+	height: 10vh;
+	border-bottom: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header nav {
+	width: 100%;
+}
+
+header nav ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	
+}
+
+header nav ul li {
+	
+}
+
 /* =========		Logo		========= */
 
 .logo {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	font-size: var(--titulo-font-size);
 	font-family: var(--font-family-titulo-secao);
 	text-align: center;
@@ -51,8 +83,8 @@ h3 {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
-	gap: 40px;
+	height: 90vh;
+	gap: 70px;
 }
 
 .hero_section p {
@@ -219,3 +251,35 @@ button:hover, button:focus {
 		margin: 0px;
 	}
 } 
+
+/* =========		Footer		========= */
+footer {
+	/* centraliza o footer na tela */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60vh;
+}
+
+footer .wrapper_footer {
+	display: flex;
+	flex-direction: column;
+	width: clamp(250px, 70%, 1000px);
+}
+
+footer ul {
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+footer ul li{
+	display: flex; /* para o texto ficar ao lado do ícone */
+	align-items: center; /* para o texto ficar na altura do ícone */
+	gap: 15px;
+}
+
+footer img {
+	width: var(--subtitulo-font-size);
+}
