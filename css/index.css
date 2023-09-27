@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: var(--cinza-claro);
 	color: var(--cinza-escuro);
@@ -25,34 +29,75 @@ a:link, a:visited {
 	color: var(--cinza-escuro);
 }
 
-a:hover, a:active {
+a:hover, a.active {
 	color: var(--laranja);
-	font-weight: bold;
 }
 
 /* =========		Header		========= */
-
 header {
-	height: 10vh;
-	border-bottom: 1px solid black;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 10px 0px;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+	transition: 0.6s;
 }
 
-header nav {
-	width: 100%;
+header.sticky {
+	background-color: var(--cinza-claro);	
 }
 
 header nav ul {
 	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-	
+	gap: 50px;
+	position: relative;
 }
 
 header nav ul li {
-	
+	position: relative;
+	transition: 0.6s;
+}
+
+header nav ul li a {
+	transition: 0.3s;
+}
+
+
+/*
+body {
+	padding-top: 64px;
+}
+
+#solucoes {
+	padding-top: 64px;
+}*/
+
+/* =========		Logo Nav Bar		========= */
+
+.logo_nav{
+	position: relative;
+	align-self: start;
+	align-items: center;
+	font-size: var(--paragrafo-font-size);
+	width: fit-content;
+	transition: 0.6s;
+}
+
+.logo_nav p {
+	font-family: var(--font-family-titulo-secao);
+	text-align: center;
+}
+
+.logo_nav .titulo_nav {
+	font-size: calc(1em + 5px);
+}
+
+.logo_nav .subtitulo_nav {
+	font-size: calc(0.75em + 5px);
+	color: var(--laranja);
+	line-height: 12px;
 }
 
 /* =========		Logo		========= */
@@ -71,7 +116,7 @@ header nav ul li {
 }
 
 .logo h2 {
-	font-size: 0.65em;
+	font-size: 0.75em;
 	color: var(--laranja);
 	line-height: 12px;
 }
@@ -79,16 +124,23 @@ header nav ul li {
 /* =========		Hero Section		========= */
 
 .hero_section {
+	background-color: pink;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 90vh;
+	height: 93vh;
 	gap: 70px;
 }
 
 .hero_section p {
 	width: clamp(45ch, 50%, 75ch);
+}
+
+@media only screen and (max-width: 1000px) {
+	.hero_section a {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -105,12 +157,35 @@ header nav ul li {
 	}
 }
 
-/* conteudo: desenho das tv boxes + texto */
-.hero_section .conteudo {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;	
+/* =========		Animação do Scroll		========= */
+.scroll {
+	padding: 10px 20px;
 }
+
+.scroll:hover{
+	animation-name: infiniteupdown;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animetion-timing-function: wave;
+	translation: all .2s;
+}
+
+@keyframes infiniteupdown {
+
+	0% {
+		transform: translateY(0px);
+	}
+	
+	50% {
+		transform: translateY(40px);
+	}
+	
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+
 
 /* =========		Soluções		========= */
 .solucoes {
@@ -155,8 +230,12 @@ header nav ul li {
 	margin-bottom: 20px;
 }
 
-button:hover, button:focus {
-	background-color: #F082AC;
+.solucoes button:hover, .solucoes button:focus {
+	background-color: #c14400; 
+}
+
+.solucoes button a:link, .solucoes button a:visited {
+	color: var(--branco);
 }
 
 .solucoes .todos_cartoes {
@@ -180,7 +259,6 @@ button:hover, button:focus {
 }
 
 @media only screen and (max-width: 1300px) {
-	/* o botão fica no meio do cartão */
 	.solucoes button {
 		margin-right: 10%;
 	}
@@ -195,72 +273,21 @@ button:hover, button:focus {
 	margin: 0px 10%;
 }
 
-.solucoes .cartao .imagem {
-	background-color: #DEDEDE;
-	width: 100%;
-	min-height: 212px;
-	border-radius: 12px 12px 0px 0px;
-}
-
 .solucoes .cartao .imagem img {
 	border-radius: 12px 12px 0px 0px;
 	width: 100%;
-	min-height: 212px;
+	aspect-ratio: 4 / 3;
 }
 
-.solucoes a {
+.solucoes .repositorio_completo{
 	color: var(--laranja);
 	font-weight: bold;
 	text-decoration: underline;
 }
 
-@media only screen and (max-width: 700px) {
-	.solucoes .cartao {
-		width: 292px;
-	}
-	
-	.solucoes .cartao .imagem {
-		height: 172px;
-	}
-} 
-
 @media only screen and (max-width: 550px) {
-	.solucoes .cartao {
-		width: 242px;
-	}
-	
-	.solucoes .wrapper {
-		width: 100%;
-		border-radius: 0px;
-	}
-} 
-
-@media only screen and (max-width: 400px) {
 	.solucoes .todos_cartoes {
-		width: 100%;
-	}
-	
-	.solucoes .cartao {
-		width: 100%;
-		border-radius: 0px;
-	}
-		
-	.solucoes .cartao .imagem {
-		height: 122px;
-		border-radius: 0px;
-	}
-	
-	.solucoes .cartao .imagem img {
-		border-radius: 0px;
-		height: 122px;
-		object-fit: fill;
-	}
-	
-	.solucoes button {
-		width: 100%;
-		border-radius: 0px;
-		padding: 5px 10px;
-		margin: 0px;
+		width: 90%;
 	}
 } 
 
@@ -294,4 +321,8 @@ footer ul li{
 
 footer img {
 	width: var(--subtitulo-font-size);
+}
+
+#blankspace {
+	height: 0vh;
 }
