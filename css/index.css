@@ -1,5 +1,6 @@
 html {
 	scroll-behavior: smooth;
+	scroll-padding-top: 5vw;
 }
 
 body {
@@ -46,7 +47,7 @@ header {
 }
 
 header.sticky {
-	background-color: var(--cinza-claro);	
+	background-color: var(--cinza-claro);
 }
 
 header nav ul {
@@ -124,7 +125,6 @@ body {
 /* =========		Hero Section		========= */
 
 .hero_section {
-	background-color: pink;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
