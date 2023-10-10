@@ -5,10 +5,10 @@ let navLinks = document.querySelectorAll('header nav a');
 function onScroll() {
 	sections.forEach(sec => {
 		let top = window.scrollY;
-		let offset = sec.offsetTop - 300;
+		let offset = sec.offsetTop - 500;
 		let height = sec.offsetHeight;
 		let id = sec.getAttribute('id');
-		
+			
 		if (top >= offset && top < offset + height) {
 			navLinks.forEach(link => {
 				link.classList.remove('active');
@@ -16,7 +16,7 @@ function onScroll() {
 
 			// Adiciona a classe 'active' ao link correspondente
 			document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-		}
+		}		
 	});
 }
 
