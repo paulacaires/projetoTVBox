@@ -5,11 +5,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title data-i18n="projeto_tvbox">Projeto TVBox</title>
+        <title>Projeto TVBox</title>
+        <link rel="icon" type="image/favicon" href="img/tvbox-favicon.svg">
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/style.css">
-        
-		  
+ 
         <style>
 			@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 			@import url('https://fonts.googleapis.com/css2?family=Viga&display=swap');
@@ -19,23 +19,34 @@
     <body> 
 		
 		<header>
-				
-			<div class="logo_nav">
-				<p class="titulo_nav">Projeto TV Box</p>
-				<p class="subtitulo_nav">UFSCar Sorocaba</p>
-			</div>
 			
-			<nav aria-label="primary menu">
-				<ul>
-					<li><a href="#home" class="active">Home</a></li>
-					<li><a href="#solucoes" data-i18n="solucoes">Nossas soluções</a></li>
-					<li><a href="#contato" data-i18n="contato">Contate-nos</a></li>
-					<!-- 
-					<li><a href="index.html" onclick="changeLanguage('ptbr')">Português</a></li>
-					<li><a href="index.html" onclick="changeLanguage('en')">English</a></li>
-					--> 
-				</ul>
+			<nav class="nav_bar">
+				<div class="logo_nav">
+					<p class="titulo_nav">Projeto TV Box</p>
+					<p class="subtitulo_nav">UFSCar Sorocaba</p>
+				</div>
+				
+				<div class="nav_list">
+					<ul class="nav_item">
+						<li><a href="#home" class="active">Home</a></li>
+						<li><a href="#solucoes">Nossas soluções</a></li>
+						<li><a href="#contato">Contate-nos</a></li>
+					</ul>
+				</div>
+				
+				<div class="mobile_menu_icon">
+					<button onclick="menuShow()"><img class="icon" src="img/menu.svg" alt="mobile menu"></button>
+				</div>
 			</nav>
+			
+			<div class="mobile_menu">
+				<ul class="nav_item_mobile">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#solucoes">Nossas soluções</a></li>
+					<li><a href="#contato">Contate-nos</a></li>
+				</ul>
+			</div>
+						
 		</header>
 		
 		<script type="text/javascript">
@@ -48,11 +59,11 @@
 		<section class="hero_section" id="home">	
 								
 			<div class="logo">
-				<h1 data-i18n="projeto_tvbox">Projeto TV Box</h1>
+				<h1>Projeto TV Box</h1>
 				<h2>UFSCar Sorocaba</h2>			
 			</div>
 		
-			<p data-i18n="descricao_projeto"> 
+			<p> 
 				O Projeto TV Box da UFSCar Sorocaba tem como objetivo descaracterizar 
 				receptores de sinal de TV Pirata (”gatonet”) apreendidos pela Receita Federal 
 				com a finalidade de gerar soluções com impacto social.			
@@ -66,9 +77,9 @@
 		 
 		<section class="solucoes" id="solucoes">
 			<div class="wrapper">
-				<h2 data-i18n="solucoes">Nossas soluções</h2>
+				<h2>Nossas soluções</h2>
 			
-				<p class="descricao" data-i18n="descricao_solucoes">
+				<p class="descricao">
 					Nós descaracterizamos as máquinas e estamos elaborando 
 					diversas soluções para esses equipamentos. 
 					Confira o <a class="repositorio_completo" href="https://github.com/lizier/projeto-tvbox" target="_blank">repositório completo</a> do Projeto.
@@ -82,8 +93,8 @@
 						 </div>
 
 						 <h3>Wi-Fi</h3>
-						 <p data-i18n="descricao_wifi">Tendo problemas com o Wi-Fi da sua TVBox? Veja a nossa solução!</p>
-						 <button data-i18n="botao_wifi"><a href="https://github.com/lizier/projeto-tvbox/tree/main/tx9-hotspot" target="_blank">Solução Wi-Fi</a></button>			 
+						 <p>Tendo problemas com o Wi-Fi da sua TVBox? Veja a nossa solução!</p>
+						 <button><a href="https://github.com/lizier/projeto-tvbox/tree/main/tx9-hotspot" target="_blank">Solução Wi-Fi</a></button>			 
 					</div>
 					
 					<div class="cartao">
@@ -91,9 +102,9 @@
 							<img src="img/jpg/armbian.jpg" alt="armbian logo with a penguim in a gray background"> 	
 						 </div>
 						 
-						 <h3 data-i18n="descaracterizacao">Descaracterização</h3>
-						 <p data-i18n="descricao_descaracterizacao">Quer remover o Android e instalar o Armbian do zero? Comece por aqui!</p>
-						 <button data-i18n="botao_descaracterizacao"><a href="https://github.com/lizier/projeto-tvbox/tree/main/tx9-instalacao-armbian-ssh" target="_blank">Comece por aqui</a></button>						 
+						 <h3>Descaracterização</h3>
+						 <p>Quer remover o Android e instalar o Armbian do zero? Comece por aqui!</p>
+						 <button><a href="https://github.com/lizier/projeto-tvbox/tree/main/tx9-instalacao-armbian-ssh" target="_blank">Comece por aqui</a></button>						 
 					</div>
 					
 					<div class="cartao">
@@ -102,8 +113,8 @@
 						 </div>
 						 
 						 <h3>Hotspot</h3>
-						 <p data-i18n="descricao_hotspot">Veja como utilizar a TVBox como um Hotspot.</p>
-						 <button data-i18n="botao_hotspot"><a href="https://github.com/lizier/projeto-tvbox/tree/main/tx9-hotspot" target="_blank">Solução Hotspot</a></button>						 
+						 <p>Veja como utilizar a TVBox como um Hotspot.</p>
+						 <button><a href="https://github.com/lizier/projeto-tvbox/tree/main/tx9-hotspot" target="_blank">Solução Hotspot</a></button>						 
 					</div>
 					
 					<div class="cartao">
@@ -112,7 +123,7 @@
 						 </div>
 						 
 						 <h3>Capibian</h3>
-						 <p data-i18n="descricao_capibian">Como instalar extensão Office no Armbian.</p>
+						 <p>Como instalar extensão Office no Armbian.</p>
 						 <button><a href="https://github.com/lizier/projeto-tvbox/tree/main/tutorial_office" target="_blank">Capibian</a></button>						 
 					</div>
 					
@@ -124,12 +135,12 @@
 		<section id="contato">
 			<footer>
 				<div class="wrapper_footer">
-					<h2 data-i18n="contato">Contate-nos</h2>
+					<h2>Contate-nos</h2>
 					
 					<ul>
 						<li>
 							<img src="img/address.svg" alt="icon of address"> 
-							<p data-i18n="endereco">Rod. João Leme dos Santos, Km 110, Sorocaba - SP, 18052-780</p>
+							<p>Rod. João Leme dos Santos, Km 110, Sorocaba - SP, 18052-780</p>
 						</li>
 						
 						<li>
@@ -145,7 +156,6 @@
 				</div>
 			</footer>
 		</section>
-
 		<script src="js/navbar_script.js"></script>
 	</body>
 </html>

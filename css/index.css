@@ -39,15 +39,19 @@ header {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	padding: 10px 0px;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	padding: 7px 0px;
 	transition: 0.6s;
+	background-color: var(--cinza-claro);
 }
 
 header.sticky {
-	background-color: var(--cinza-claro);
+	/* propriedades do header quando scrola */
+}
+
+header nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 header nav ul {
@@ -65,24 +69,70 @@ header nav ul li a {
 	transition: 0.3s;
 }
 
-
-/*
-body {
-	padding-top: 64px;
+.mobile_menu_icon, .mobile_menu {
+	display: none;
 }
 
-#solucoes {
-	padding-top: 64px;
-}*/
+/* =========		Mobile Menu		========= */
+
+@media only screen and (max-width: 810px) {
+	html {
+		scroll-padding-top: 16vw;
+	}
+	
+	.nav_bar {
+		padding: 1.5rem 4rem;
+	}
+	
+	.nav_item {
+		display: none;
+	}
+	
+	.mobile_menu_icon {
+		display: block;
+	}
+	
+	.mobile_menu_icon button {
+		background-color: transparent;
+		border: none;
+		cursor: pointer;		
+	}
+
+	.mobile_menu {
+		background-color: var(--cinza-medio);
+		padding: 10px;
+	}
+	
+	.mobile_menu ul {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		gap: 20px;
+	}
+	
+	.mobile_menu ul li a {
+		border-bottom: 1px solid var(--laranja);
+		border-top: 1px solid var(--laranja);
+	}
+	
+	.mobile_menu a:active {
+		color: var(--cinza-escuro);
+	}
+	
+	.mobile_menu_icon img {
+		width: var(--subtitulo-font-size);
+	}
+	
+	.open {
+		display: block;
+	}
+}
 
 /* =========		Logo Nav Bar		========= */
 
 .logo_nav{
 	position: relative;
-	align-self: start;
-	align-items: center;
-	font-size: var(--paragrafo-font-size);
-	width: fit-content;
+	font-size: var(--h3-font-size);
 	transition: 0.6s;
 }
 
@@ -92,16 +142,16 @@ body {
 }
 
 .logo_nav .titulo_nav {
-	font-size: calc(1em + 5px);
+	font-size: 1em;
 }
 
 .logo_nav .subtitulo_nav {
-	font-size: calc(0.75em + 5px);
+	font-size: 0.75em;
+	line-height: 0.5em;
 	color: var(--laranja);
-	line-height: 12px;
 }
 
-/* =========		Logo		========= */
+/* =========		Logo Hero Section		========= */
 
 .logo {
 	display: flex;
@@ -129,7 +179,8 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 93vh;
+	height: 100vh;
+	padding-top: 80px;
 	gap: 70px;
 }
 
@@ -141,6 +192,10 @@ body {
 	.hero_section a {
 		display: none;
 	}
+	
+	.hero_section {
+		height: 500px;
+	}
 }
 
 @media only screen and (max-width: 600px) {
@@ -148,7 +203,7 @@ body {
 		justify-content: space-between;
 		gap: 0px;
 		height: fit-content;
-		padding: 40px 0px 40px 0px;
+		padding: 100px 0px 100px 0px;
 	}
 
 	.hero_section p {
@@ -202,7 +257,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;	
-	width: clamp(250px, 70%, 1000px);
+	width: clamp(250px, 75%, 1000px);
 	background-color: var(--cinza-medio);
 	border-radius: 30px;
 }
@@ -242,8 +297,8 @@ body {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	width: 75%;
-	gap: 40px;
+	width: 90%;
+	gap: 30px;
 	flex-wrap: wrap;
 	margin-bottom: 40px;
 }
@@ -297,32 +352,30 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 60vh;
+	height: fit-content;
+	padding-top: clamp(40px, 7%, 60px);
+	padding-bottom: clamp(40px, 7%, 60px);
 }
 
 footer .wrapper_footer {
 	display: flex;
 	flex-direction: column;
-	width: clamp(250px, 70%, 1000px);
+	row-gap: 20px;
+	width: clamp(250px, 75%, 1000px);
 }
 
 footer ul {
-	height: 30vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	gap: 20px;
 }
 
 footer ul li{
 	display: flex; /* para o texto ficar ao lado do ícone */
 	align-items: center; /* para o texto ficar na altura do ícone */
-	gap: 15px;
+	gap: 15px; /* gap entre icone e texto */
 }
 
 footer img {
 	width: var(--subtitulo-font-size);
-}
-
-#blankspace {
-	height: 0vh;
 }
