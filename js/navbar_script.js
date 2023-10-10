@@ -5,9 +5,9 @@ let navLinks = document.querySelectorAll('header nav a');
 function onScroll() {
 	sections.forEach(sec => {
 		let top = window.scrollY;
-		let offset = sec.offsetTop - 500;
 		let height = sec.offsetHeight;
 		let id = sec.getAttribute('id');
+		let offset = (id != 'solucoes' && id != 'home') ? (sec.offsetTop - 900) : (sec.offsetTop - 500);
 			
 		if (top >= offset && top < offset + height) {
 			navLinks.forEach(link => {
