@@ -32,8 +32,8 @@ html {
 	--branco: #FFFFFF;
 	
 	/*	TAMANHOS  */
-	--paragrafo-font-size: clamp(1.2rem, 1vw + 1rem, 1.8rem);
-	--titulo-font-size: clamp(2.5rem, 4vw + 1rem, 5.5rem);
-	--subtitulo-font-size: clamp(1.5rem, 3vw + 1rem, 3.5rem);
-	--h3-font-size: clamp(0.5rem, 2vw + 1rem, 2.5rem);
+	--titulo-font-size: clamp(2rem, 3vw + 1rem, 4.0rem);
+	--subtitulo-font-size: clamp(1.5rem, 3vw + 1rem, 3.0rem);
+	--h3-font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem);
+	--paragrafo-font-size: clamp(1.4rem, 1vw + 1rem, 1.7rem);
 }
